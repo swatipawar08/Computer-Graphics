@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html;charset=utf-8" >
+<title>Shape Editor</title>
+<script type="text/javascript" src="finalproj.js"></script>
+<style>
+  .container {
+    position: relative;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  .container .btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    background-color: #e4e7ff;
+    color: black;
+    font-size: 16px;
+    padding: 16px 30px;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    text-align: center;
+  }
+  
+  .container .btn:hover {
+    background-color: black;
+    color: rgb(189, 200, 255);
+  }
+
+  .button2 {width: 13%;}
+
+
+  .dropbtn {
+  background-color: #f1f1f1;
+  color: rgb(0, 0, 0);
+  padding: 6px;
+  font-size: 16px;
+  border:rgb(0, 0, 0);
+  cursor: pointer;
+}
+
+  </style>
+</head>
+
+<body> 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.3.4/jspdf.min.js"></script>
+<div style="float:bottom; width:70%; margin-left:10px;margin-right:200px; background-color: rgb(255, 233, 236); border:2px solid #050505; border-width:3px; border-style:solid;">
+<div><img src="Icons/app.jpg" width="65" height="65" ><label style="font-family: 'Arial Narrow Bold' ; color: rgb(4, 65, 117); font-size:300%;  text-align:center;"><b>SHAPE EDITOR </b></label>
+  <h3>Shapes: <select name="Shapes" id="Shapes" class="dropbtn">
+    <option value="Select Shape">Select Shape</option>
+    <option value="rectangle">Rectangle</option>
+    <option value="circle">Circle</option>
+    <option value="line">Line</option>
+    <option value="triangle">Triangle</option>
+    <option value="polygon">Polygon</option>
+    <option value="ellipse">Ellipse</option>
+    <option value="square">Square</option>
+    <option value="polyline">Poly-Line</option>  
+    <option value="pencil">Pencil</option>
+  </select>
+  Color: <input type="color" id="picker">
+  <br>
+  <br>
+<button id="Clear" class="btn button2"><img src="Icons/new.png" width="15" height="15">New</button>
+<button id="Undo" class="btn button2" > <img src="Icons/undo.png" width="15" height="15" >Undo</button> 
+<button id="Grid" class="btn button2"><img src="Icons/grid.png" width="15" height="15" >Grid</button> 
+<button id="Eraser" class="btn button2" > <img src="Icons/eraser.png" width="15" height="15" >Eraser</button>
+<button id="Fill" class="btn button2" ><img src="Icons/fill.jpg" width="15" height="15">Fill Color</button>
+<button id="copy" class="btn button2" ><img src="Icons/copy.png" width="15" height="15">Copy</button> 
+<button id="paste" class="btn button2"><img src="Icons/paste.png" width="15" height="15">Paste</button> 
+<br><br>
+<button id="Rotate" class="btn button2"><img src="Icons/rotate.png" width="15" height="15">Rotate</button>
+<button id="ZoomIn" class="btn button2" > <img src="Icons/zoomin.png" width="15" height="15">Zoom In</button>
+<button id="ZoomOut" class="btn button2" > <img src="Icons/zoomout.png" width="15" height="15">Zoom Out</button>
+<button id="Save" class="btn button2"><img src="Icons/save.png" width="15" height="15">SaveAsJPG</button> 
+<button id="Savepdf" class="btn button2"><img src="Icons/save.png" width="15" height="15">SaveAsPDF</button> 
+<button id="Savejson" class="btn button2"><img src="Icons/save.png" width="15" height="15">SaveAsJson</button>
+<br><br>
+<label>Load: <input type="file" id="Load" style="background-color: rgb(219, 238, 255);"></label>
+<img src="Icons/polygon.png" width="15" height="15">     Sides: 5 <input id="numside" type="range"
+  min="5" max="10" step="1" value="5" />
+  10|  
+Thickness: 2<input id="thick" type="range"
+  min="2" max="10" step="1" value="2" />
+  10| <p> <span id="range"></span></p> 
+</div> 
+</div>
+</div>
+</h4><style>h4 {color:rgb(8, 10, 0);}</style>
+<canvas id="canvas" width="512" height="512" style="margin-left:10px; width:70%; border:2px solid #000000;border-width:3px; border-style:solid;">
+  Oops ... your browser doesn't support the HTML5 canvas element
+  </canvas>
+
+</body>
+</html>
